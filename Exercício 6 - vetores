@@ -1,0 +1,43 @@
+/*
+2)	Um fazendeiro deseja controlar o peso de seu pequeno rebanho de cabras, assim ele irá por 3 meses pesar cada um de seus 10 animais e registar o peso de cada um. Você irá criar um programa que possibilite estes registros mensais para as 10 cabras. O programa irá mostrar para cada animal a perda ou ganho de pesos nos três meses e identificar em qual mês o animal teve o maior peso. Informe, também, o peso total do rebanho no último mês e o valor da diferença entre o primeiro mês e o último mês do registro
+
+*/
+#include <stdio.h>
+
+int main() {
+    int mes1[10], mes2[10], mes3[10],soma1=0,soma3,i;
+   printf("-----MÊS 1-----");
+   for(i=0;i<10;i++){
+       printf("\nInforme o peso da cabra %d no mês 2: ", i+1);
+       scanf("%d", &mes1[i]);
+       soma1 = soma1 + mes1[i];
+   }
+   printf("-----MÊS 2-----");
+    for(i=0;i<10;i++){
+       printf("\nInforme o peso da cabra %d no mês 1: ", i+1);
+       scanf("%d", &mes1[i]);
+   }
+   printf("-----MÊS 3-----");
+    for(i=0;i<10;i++){
+       printf("\nInforme o peso da cabra %d no mês 1: ", i+1);
+       scanf("%d", &mes2[i]);
+       soma3 = soma3 + mes3[i];
+   }
+   
+   int diferenca;
+   
+    for(i=0;i<10;i++){
+        diferenca = mes1[i] - mes3[i];
+      if(diferenca < 0){
+          printf("A cabra %d ganhou %d quilos",i+1, -diferenca);
+      }
+      else{
+          if(diferenca > 0){
+              printf("A cabra %d perde %d quilos",i+1, diferenca);
+          }
+      }
+   }
+   
+   printf("\nO peso do rebanho no último mês é de %d quilos", soma3);
+   printf("\nA diferença entre o primeiro e o último mes é de %d quilos", soma3 - soma1);
+}
