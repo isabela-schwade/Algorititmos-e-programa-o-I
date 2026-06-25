@@ -1,0 +1,27 @@
+/*
+1)	Faça um programa que leia 5 valores inteiros, armazeno-os em um vetor, calcule e apresente a soma destes valores. Calcule e apresente a média dos valores entrados e aqueles que são maiores e menores que a média.
+*/
+#include <stdio.h>
+
+int main() {
+    int vetor[5], i, soma=0, media;
+    
+    for(i=0;i<5;i++){
+        printf("\nInforme o valor da posição %d ", i+1);
+        scanf("%d",&vetor[i]);
+        soma = soma+vetor[i];
+    }
+    media = soma/5;
+    printf("\nA média dos valores é %d",media);
+    
+    for(i=0;i<5;i++){
+        if(vetor[i]>media){
+            printf("\nO número %d é maior que a média!", vetor[i]);
+        }
+        else{
+            if(vetor[i]<media){
+                 printf("\nO número %d é menor que a média!", vetor[i]);
+            }
+        }
+    }
+}
