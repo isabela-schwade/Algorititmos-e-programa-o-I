@@ -1,0 +1,34 @@
+/*
+1)	Faça um programa que lê valores inteiros maiores que 10 em um vetor de 7 posições. Posteriormente crie um outro vetor com os elementos ímpares do vetor original. Ao final do programa imprima os dois vetores criados.
+
+
+*/
+#include <stdio.h>
+
+int main() {
+    int vetor[7], i, cont=0, impares[7];
+    
+    for(i=0;i<7;i++){
+        printf("\nInforme o valor da posição %d ", i+1);
+        scanf("%d",&vetor[i]);
+        
+        while(vetor[i] <= 10){
+            printf("\nInforme um valor maior que 10: ");
+            scanf("%d",&vetor[i]);
+        }
+       
+    }
+    
+    printf("\nValores ímpares: ");
+    int j=0;
+    for(i=0; i<7;i++){
+        if(vetor[i] % 2 != 0){
+            impares[cont] = vetor[i];
+            printf("\n%d", impares[cont]);
+            cont++;
+        }
+      
+    }
+   
+   
+}
