@@ -1,0 +1,57 @@
+/*Faça um programa que solicite a data de nascimento (dd/mm/aaaa) do usuário e imprima a data com o nome do mês por extenso .*/
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+
+   char data[40];
+   
+   printf("Infomre a data do seu nascimento: ");
+   fgets(data, 40, stdin);
+   
+   if(data[3] == '0'){
+        switch(data[4]){
+            case '1':
+                 printf("\nVocê nasceu em janeiro!");
+                 break;
+            case '2':
+                 printf("\nVocê nasceu em fevereiro!");
+                 break;
+            case '3':
+                 printf("\nVocê nasceu em março!");
+                 break;
+            case '4':
+                 printf("\nVocê nasceu em abril!");
+                 break;
+            case '5':
+                 printf("\nVocê nasceu em maio!");
+                 break;
+            case '6':
+                 printf("\nVocê nasceu em junho!");
+                 break;
+            case '7':
+                 printf("\nVocê nasceu em julho!");
+                 break;
+            case '8':
+                 printf("\nVocê nasceu em agosto!");
+                 break;
+            case '9':
+                 printf("\nVocê nasceu em setembro!");
+                 break;
+        }
+   }
+   else{
+       switch(data[4]){
+           case '0':
+                printf("\nVocê nasceu em outubro!");
+                break;
+            case '1':
+                printf("\nVocê nasceu em novembro!");
+                break;
+            case '2':
+                printf("\nVocê nasceu em dezembro!");
+                break;
+       }
+   }
+  
+}
