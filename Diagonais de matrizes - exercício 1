@@ -1,0 +1,32 @@
+/*
+1)	Elabore um programa que manipule com uma matriz 5 x 5 de inteiros, posteriormente conte quantos elementos da diagonal secundária são maiores que 20.
+*/
+#include <stdio.h>
+
+int main() {
+    int matriz[3][3],cont=0;
+    int i, j;
+
+    // Leitura
+    for(i = 0; i < 3; i++){
+        for(j = 0; j < 3; j++){
+           
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+
+    
+
+    for(i = 0; i < 3; i++){
+        for(j = 0; j < 3; j++){
+            if(i + j == 2){  
+                if(matriz[i][j]>20){
+                    cont++;
+                }
+                
+            }
+        }
+    }
+
+    printf("\nExistem %d elementos da diagonal secundária maiores que 20!", cont);
+}
