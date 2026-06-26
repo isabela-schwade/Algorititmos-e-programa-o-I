@@ -1,0 +1,44 @@
+//1)	Elabore um algoritmo que preencha duas matrizes 10×10 com valores aleatórios 0 e 1 e em seguida, determine se as matrizes são iguais (possuem os mesmos valores em cada posição). 
+#include <stdio.h>
+
+int main() {
+    int matriz[2][2], i, j, matriz2[2][2],cont=0;
+    
+   
+    for(i=0; i<2; i++){
+        for(int j=0; j<2; j++){
+            printf("\nInforme o valor da linha %d coluna %d: ",i+1,j+1);
+            scanf("%d", &matriz[i][j]);
+    }
+    }
+    
+    printf("\nMatriz 1 finalizada!");
+    
+    for(i=0; i<2; i++){
+        for(int j=0; j<2; j++){
+            printf("\nInforme o valor da linha %d coluna %d: ",i+1,j+1);
+            scanf("%d", &matriz[i][j]);
+    }
+    }
+    
+    printf("\nMatriz 2 finalizada!");
+
+    
+   
+    for(i=0; i<2;i++){
+        for(j=0;j<2;j++){
+            if(matriz[i][j]==matriz2[i][j]){
+              cont = cont +1;
+            }
+           
+        }
+       
+    }
+    
+    if(cont==4){
+        printf("\nAs duas matrizes são iguais!");
+    }
+    else{
+        printf("\nAs duas matrizes são diferentes!");
+    }
+}
