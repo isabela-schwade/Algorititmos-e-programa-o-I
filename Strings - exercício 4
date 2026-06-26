@@ -1,0 +1,32 @@
+/*4)	Conta espaços e vogais. Dado uma string com uma frase informada pelo usuário (incluindo espaços em branco), conte:
+•	quantos espaços em branco existem na frase.
+•	quantas vezes aparecem as vogais a, e, i, o, u.
+.*/
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+
+   char frase[40];
+   int i, tamanho, espaco=0, vogais=0;
+   
+   printf("Digite uma frase: ");
+   fgets(frase, 40, stdin);
+    
+   tamanho = strlen(frase);
+  
+   for(i = 0; i<tamanho; i++){
+       if(frase[i] == ' '){
+           espaco++;
+       }
+       else{
+           if(frase[i] == 'a' || frase[i] == 'e' ||frase[i] == 'i' ||frase[i] == 'o' ||frase[i] == 'u' ){
+               vogais++;
+           }
+       }
+   }
+   
+   printf("\nA frase digitada possui %d espaços e %d vogais!", espaco, vogais);
+  
+  
+}
