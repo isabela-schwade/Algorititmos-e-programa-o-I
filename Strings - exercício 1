@@ -1,0 +1,36 @@
+/* Faça um programa que leia 2 strings e informe o conteúdo delas seguido do seu comprimento. Informe também se as duas strings possuem o mesmo comprimento e são iguais ou diferentes no conteúdo.*/
+#include <stdio.h>
+#include<string.h>
+
+int main() {
+    
+    char frase1[40], frase2[40], comp1, comp2;
+    
+    printf("Digite uma frase: ");
+    fgets(frase1, 40, stdin);
+    
+    printf("Digite outra frase: ");
+    fgets(frase2, 40, stdin);
+    
+    comp1 = strlen(frase1);
+    comp2 = strlen(frase2);
+    
+    printf("\nA primeira frase digitada é: \n");
+    puts(frase1);
+    printf("\nSeu comprimento é de %d caracteres!", comp1);
+    
+    printf("\nA segunda frase digitada é: \n");
+    puts(frase2);
+    printf("\nSeu comprimento é de %d caracteres!", comp2);
+   
+   if((strcmp(frase1, frase2)) == 0){
+       printf("\nAs frases são iguais!");
+   }
+   else{
+       printf("\nAs frases são diferentes!");
+   }
+   
+   
+
+    return 0;
+}
