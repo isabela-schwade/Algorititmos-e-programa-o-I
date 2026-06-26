@@ -1,0 +1,26 @@
+/* Faça um programa que permita ao usuário digitar o seu nome e em seguida mostre o nome do usuário de trás para frente .*/
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+
+    char nome[40];
+    int tamanho, i;
+
+    printf("Digite seu nome: ");
+    fgets(nome, 40, stdin);
+
+    tamanho = strlen(nome);
+
+    // Remove o '\n', se existir
+    if (nome[tamanho - 1] == '\n') {
+        nome[tamanho - 1] = '\0';
+        tamanho--;
+    }
+
+    for (i = tamanho - 1; i >= 0; i--) {
+        printf("%c", nome[i]);
+    }
+
+    return 0;
+}
