@@ -1,0 +1,29 @@
+// 4)	Faça um programa que manipule com uma matriz 5 x 5 de inteiros. Leia também um valor inteiro independente. O programa deverá fazer uma busca à desse valor na matriz e, ao final, escrever a localização (linha e coluna) ou uma mensagem de “não encontrado”.  
+#include <stdio.h>
+
+int main() {
+    int matriz[4][4], i, j, valor,cont=0, linha,coluna;
+    
+    printf("Informe um valor de referência: ");
+    scanf("%d", &valor);
+    for(i=0; i<5; i++){
+        for(int j=0; j<5; j++){
+            printf("\nInforme o valor da linha %d coluna %d: ",i+1,j+1);
+            scanf("%d", &matriz[i][j]);
+            if(matriz[i][j]==valor){
+                linha = i;
+                coluna = j;
+                cont++;
+            }
+    }
+    }
+
+   if(cont !=0){
+       printf("\nO valor digitado se encontra na linha %d e na coluna %d", linha+1, coluna +1);
+       
+   }
+   else{
+       printf("\nValor não encontrado!");
+   }
+   
+}
