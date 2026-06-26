@@ -1,0 +1,46 @@
+//5)	Faça um programa que crie duas matrizes 4 x 4 de inteiros  e posteriormente cria  uma terceira com os maiores valores de cada posição das matrizes lidas. 
+#include <stdio.h>
+
+int main() {
+    int matriz[4][4], i, j, matriz2[4][4], matriz3[4][4];
+    
+   
+    for(i=0; i<2; i++){
+        for(int j=0; j<2; j++){
+            printf("\nInforme o valor da linha %d coluna %d: ",i+1,j+1);
+            scanf("%d", &matriz[i][j]);
+    }
+    }
+    
+    printf("\nMatriz 1 finalizada!");
+    
+    for(i=0; i<2; i++){
+        for(int j=0; j<2; j++){
+            printf("\nInforme o valor da linha %d coluna %d: ",i+1,j+1);
+            scanf("%d", &matriz[i][j]);
+    }
+    }
+    
+    printf("\nMatriz 2 finalizada!");
+
+    printf("\nImpressão da matriz 3:\n");
+   
+    for(i=0; i<2;i++){
+        for(j=0;j<2;j++){
+            if(matriz[i][j]>matriz2[i][j]){
+               matriz3[i][j] = matriz[i][j];
+            }
+            else{
+                 matriz3[i][j] = matriz[i][j];
+            }
+        }
+       
+    }
+    
+     for(i=0; i<2;i++){
+        for(j=0;j<2;j++){
+           printf("%d ",matriz3[i][j]); 
+        }
+        printf("\n");
+     }
+}
