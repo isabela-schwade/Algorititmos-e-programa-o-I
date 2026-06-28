@@ -1,0 +1,49 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <string.h>
+int main() {
+    
+  char comentario[40];
+  int qtd_caracteres, qtd_palavras, qtd_brancos,i, qtd_livros, qtd_comentario =0;
+  
+  printf("Digite um comentário ou 'SAIR' para encerrar: ");
+  fgets(comentario, 40, stdin);
+  
+  while((strcmp(comentario, "SAIR\n")) != 0){
+      qtd_palavras = 0;
+      qtd_brancos = 0;
+      qtd_comentario++;
+      qtd_caracteres = strlen(comentario);
+      
+      for(i=0; i<qtd_caracteres;i++){
+          if(comentario[i] == ' '){
+              qtd_palavras++;
+              qtd_brancos++;
+          }
+      }
+      
+      for(i=0; i<qtd_caracteres;i++){
+          if(comentario[i] == 'l' && comentario[i+1] == 'i' && comentario[i + 2] == 'v' && comentario[i +3] == 'r' &&comentario[i + 4] == 'o') {
+                qtd_livros++;
+          }
+      }
+      
+      printf("\nO comentário digitado possui %d caracteres.", qtd_caracteres);
+      printf("\nO comentário digitado possui %d palavras.",  qtd_palavras + 1);
+      printf("\nO comentário digitado possui %d espaços em branco.", qtd_brancos );
+      
+      if(qtd_livros !=0){
+          printf("\nA palavra livro aparece no comentário!");
+      }
+      else{
+          printf("\nA palavra livro não aparece no comentário!");
+      }
+     
+      printf("\nDigite outro comentário ou 'SAIR' para encerrar: ");
+      fgets(comentario, 40, stdin);
+      
+  }
+  printf("\nForam digitados %d comentários!", qtd_comentario);
+  printf("\nA palavra livro apareceu %d vezes", qtd_livros);
+  printf("\nFim do programa");
+}
