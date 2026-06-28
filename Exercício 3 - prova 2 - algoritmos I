@@ -1,0 +1,49 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    
+    float distancia[7],maior_distancia, menor_distancia, soma=0, media;
+    int i;
+    
+    for(i=0; i<7;i++){
+        printf("\nInforme a distância percorrida no dia %d: ", i+1);
+        scanf("%f", &distancia[i]);
+        
+        menor_distancia = distancia[0];
+        maior_distancia = 0;
+        while(distancia[i] < 0){
+            printf("\nA distância não pode ser negativa. Digite novamente: ");
+            scanf("%f", &distancia[i]);
+        }
+        
+        soma = soma + distancia[i];
+        
+        if(distancia[i] > maior_distancia){
+                maior_distancia = distancia[i];
+        }
+        else{
+             if(distancia[i] < menor_distancia){
+                    menor_distancia = distancia[i];
+              }
+            }
+            
+            
+        
+
+    }
+    
+    media = soma/7;
+    
+    printf("\nA maior distância foi de %f quilômetros.", maior_distancia);
+    printf("\nA menor distância foi de %f quilômetros.", menor_distancia);
+    printf("\nA média das distâncias foi de %f quilômetros.", media);
+    printf("\nOs dias em que a distância percorrida foi maior que a média semanal foram: ");
+    
+    for(i=0;i<7;i++){
+        if(distancia[i]>media){
+            printf("\nDia %d.", i+1);
+        }
+    }
+    return 0;
+}
