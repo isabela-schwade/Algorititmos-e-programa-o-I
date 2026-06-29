@@ -1,0 +1,26 @@
+/*
+4) Desenvolva um programa em linguagem C que leia um número inteiro do usuário e informe se ele é par ou ímpar.
+A verificação e exibição do resultado devem ser feitas dentro de uma função com parâmetro e sem retorno
+
+*/
+
+void imprime(int num);
+#include<stdio.h>
+int main(){
+    
+    int numero;
+    
+    printf("Informe um número: ");
+    scanf("%d", &numero);
+    
+    imprime(numero);  
+}
+void imprime(int num){
+   if(num%2 == 0){
+       printf("\nO número é par!");
+   }
+   else{
+       printf("\nO número é ímpar!");
+   }
+    
+}
