@@ -1,0 +1,56 @@
+/*
+2)	Faça uma função que recebe um valor inteiro e verifica se o valor é positivo, negativo ou zero. A função deve retornar 1 para valores positivos, -1 para negativos e 0 para o valor 0.
+*/
+
+int verifica(int id);
+#include<stdio.h>
+#include<math.h>
+int main(){
+    
+   int idade, op;
+   printf("Digite a idade do nadador: ");
+   scanf("%d", &idade);
+   op = verifica(idade);
+   
+   switch(op){
+        case 1:
+            printf("\nInfantil A!");
+            break;
+        case 2:
+            printf("\nInfantil A!");
+            break;
+        case 3:
+            printf("Juvenil A!");
+            break;
+        case 4:
+            printf("Juvenil B!");
+            break;
+        default:
+            printf("Adulto!");
+            break;
+   }    
+   
+}
+int verifica(int id){
+    if(id >= 5 && id <= 7){
+        return 1;
+    }
+    else{
+        if(id >= 8 && id <= 10){
+            return 2;
+        }
+        else{
+            if(id >= 11 && id <= 13){
+                return 3;
+                
+            }
+            else{
+                if(id >= 14 && id <= 17){
+                    return 4;
+                }
+                
+                
+            }
+        }
+    }
+}
