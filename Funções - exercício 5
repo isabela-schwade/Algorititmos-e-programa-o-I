@@ -1,0 +1,35 @@
+/*
+1)	Escreva um programa que implementa o uso de uma a função que calcule e retorne a distância entre dois pontos ( x1, y1) e (x2, y2). Todos os números e valores de retorno devem ser do tipo float.
+
+*/
+
+float calcula_distancia(float x1, float y1, float x2, float y2);
+#include<stdio.h>
+#include<math.h>
+int main(){
+    
+    float xponto1, xponto2, yponto1, yponto2, distancia;
+    
+    printf("Informe a coordenada x do ponto 1:");
+    scanf("%f", &xponto1);
+    
+    printf("Informe a coordenada y do ponto 1:");
+    scanf("%f", &yponto1);
+    
+    printf("Informe a coordenada x do ponto 2:");
+    scanf("%f", &xponto2);
+    
+    printf("Informe a coordenada y do ponto 2:");
+    scanf("%f", &yponto2);
+    
+    distancia = calcula_distancia(xponto1, yponto1, xponto2, yponto2);
+    
+    printf("\nA distância é %f", distancia);
+}
+float calcula_distancia(float x1, float y1, float x2, float y2){
+    int d;
+    
+    d = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+    return(d);
+    
+}
