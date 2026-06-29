@@ -1,0 +1,77 @@
+/* 3)	 Elabore um programa que solicita o total gasto de um cliente de uma loja e imprime as opções de pagamento. Solicita a opção desejada e imprime o valor total das prestações (se houverem).
+1- Opção: a vista com 10% de desconto
+2- Opção: em duas vezes (preço da etiqueta)
+3- Opção: de 3 até 10 vezes com 3% de juros ao mês (somente para compras acima de R$ 100,00).
+ 
+OBS: fazer uma função que imprime as opções solicita a opção desejada e retorna a opção escolhida. No programa principal, testar a opção escolhida e ativar a função correspondente (uma função para cada opção). Se não for implementada a função todo o programa será desconsiderado.
+O programa será executado para cada cliente individualmente.
+*/
+
+int menu_inicial();
+void opcao1(float preco);
+void opcao2(float preco);
+void opcao3(float preco);
+#include <stdio.h>
+int main(){
+    
+    float valor;
+    int op;
+    printf("Informe o valor gasto na compra: ");
+    scanf("%f", &valor);
+    
+    op = menu_inicial();
+    
+    switch (op){
+        case 1:
+            opcao1(valor);
+            break;
+        case 2:
+            opcao2(valor);
+            break;
+        case 3:
+            opcao3(valor);
+            break;
+    }
+}
+
+int menu_inicial(){
+    int opcao;
+    
+    printf("\n1- Opção: a vista com 10%% de desconto.");
+    printf("\n2- Opção: em duas vezes (preço da etiqueta)");
+    printf("\n3- Opção: de 3 até 10 vezes com 3%% de juros ao mês (somente para compras acima de R$ 100,00).");
+    printf("\nSelecione a opção desejada: ");
+    scanf("%d", &opcao);
+    
+    while(opcao < 1 || opcao > 3) {
+        printf("\nInforme uma opção entre 1 e 3: ");
+         scanf("%d", &opcao);
+    }
+    
+    return opcao;
+}
+
+void opcao1(float preco){
+    
+    printf("\nO valor total da sua compra com o desconto é de %f", preco*0.9);
+}
+
+void opcao2(float preco){
+    
+    printf("\nO preço de cada parcela é de R$ %f", preco/2);
+   
+}
+void opcao3(float preco){
+    int vezes;
+    float total;
+    if(preco > 100){
+        printf("\nInforme em quantas vezes deseja parcelar: ");
+        scanf("%d", &vezes);
+        while(vezes < 3 || vezes > 10){
+            printf("Informe um número entre 3 e 10: ");
+            scanf("%d", &vezes);
+        }
+        total = (preco/vezes)*1.03;
+        printf("O preço total da parcela ficou de R$ %f", total);
+    }
+}
