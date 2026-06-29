@@ -1,0 +1,60 @@
+/*
+
+2) Elabore um programa em linguagem C que solicite ao usuário três notas (valores float) de um aluno. O programa deve calcular a média das notas e exibir se o aluno está aprovado, reprovado ou em recuperação, de acordo com os seguintes critérios:
+•	Aprovado: média maior ou igual a 7.0
+•	Recuperação: média entre 5.0 (inclusive) e 7.0 (exclusive)
+•	Reprovado: média menor que 5.0
+O cálculo da média e a exibição do resultado devem ser realizados dentro de uma função sem retorno (do tipo void),
+
+
+*/
+
+void media(float n1, float n2, float n3);
+#include<stdio.h>
+int main(){
+    float nota1, nota2, nota3;
+    
+    printf("Informe a nota 1: ");
+    scanf("%f", &nota1);
+    
+    while(nota1 < 0 || nota1 > 10){
+        printf("Informe um valor entre 0 e 10: ");
+        scanf("%f", &nota1);
+    }
+    
+    printf("Informe a nota 2: ");
+    scanf("%f", &nota2);
+    
+    while(nota2 < 0 || nota2>10){
+        printf("Informe um valor entre 0 e 10: ");
+        scanf("%f", &nota2);
+    }
+    
+    printf("Informe a nota 3: ");
+    scanf("%f", &nota3);
+    
+    while(nota3 < 0 || nota3 > 10){
+        printf("Informe um valor entre 0 e 10: ");
+        scanf("%f", &nota3);
+    }
+    
+    media(nota1,nota2,nota3);
+        
+}
+void media(float n1, float n2, float n3){
+    float media = (n1+n2+n3)/3;
+   
+    printf("\nA média do aluno é %f", media);
+    
+    if(media > 7){
+        printf("\nAprovado.");
+    }
+    else{
+        if(media < 5){
+            printf("\nReprovado.");
+        }
+        else{
+            printf("\nEm recuperação.");
+        }
+    }
+}
