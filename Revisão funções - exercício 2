@@ -1,0 +1,65 @@
+// No final do programa imprima a quantidade total de grão arrecadados de todos os fazendeiros, a quantidade de fazendas existentes no reino e a quantidade total de pessoas que vivem sobre a tutela do rei.
+#include <stdio.h>
+int valida_opcao();
+int valida_pessoas();
+float valida_graos();
+int main() {
+    float qtd_graos,soma = 0;
+    int qtd_fazendas = 0, qtd_pessoas, op, qtd_total = 0;
+    
+    op = valida_opcao();
+    while(op != 0){
+        qtd_fazendas++;
+        
+        qtd_pessoas = valida_pessoas();
+        qtd_graos = valida_graos();
+        
+        soma = soma + qtd_graos;
+        qtd_total = qtd_total + qtd_pessoas;
+        printf("\nDigite 1 para continuar ou 0 para sair: ");
+        scanf("%d", &op);
+    }
+    
+    printf("\nNo total existem %d fazendas.",qtd_fazendas);
+    printf("\nA quantidade total de pessoas vivendo nas fazendas é de %d", qtd_total);
+    printf("\nO total de grão arrecadados é %f quilos.", soma*0.45);
+
+    return 0;
+}
+
+int valida_pessoas(){
+    int pessoas;
+    printf("\nInforme quantas pessoas tem na sua casa: ");
+    scanf("%d", &pessoas);
+    
+    while(pessoas < 0){
+        printf("\nInforme um número positivo: ");
+        scanf("%d", &pessoas);
+    }
+    return (pessoas);
+}
+int valida_opcao(){
+    
+    int opcao;
+    printf("Digite 1 para começar ou 0 para sair: ");
+    scanf("%d", &opcao);
+    
+    while(opcao != 1 && opcao != 0){
+        printf("Digite uma opção válida: ");
+        scanf("%d", &opcao);
+    }
+    
+    return opcao;
+    
+}
+float valida_graos(){
+    float graos;
+    printf("\nInforme a quantidade graos que a sua família produz: ");
+    scanf("%f", &graos);
+    
+    while(graos < 0){
+        printf("\nInforme um número positivo: ");
+        scanf("%f", &graos);
+    }
+    return (graos);
+}
